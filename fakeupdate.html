@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Mise à jour Windows</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+  body {
+    background: #0078d7;
+    color: white;
+    font-family: 'Orbitron', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  #progressBar {
+    width: 80%;
+    height: 30px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  #progress {
+    height: 100%;
+    width: 0%;
+    background: #00fffc;
+    border-radius: 15px 0 0 15px;
+    transition: width 0.5s ease;
+  }
+</style>
+</head>
+<body>
+
+<h1>Mise à jour de Windows en cours</h1>
+<p>Ne pas éteindre l’ordinateur</p>
+<div id="progressBar"><div id="progress"></div></div>
+
+<audio id="ding" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg" preload="auto"></audio>
+
+<script>
+  const progress = document.getElementById('progress');
+  const ding = document.getElementById('ding');
+
+  let progressValue = 0;
+
+  function updateProgress() {
+    if(progressValue >= 100) {
+      ding.play();
+      alert("Mise à jour terminée !");
+      return;
+    }
+    // Avance de 1 à 5 % aléatoire
+    const step = Math.floor(Math.random() * 5) + 1;
+    progressValue = Math.min(progressValue + step, 100);
+    progress.style.width = progressValue + '%';
+
+    // Pause aléatoire entre 500ms et 3000ms
+    const pause = Math.floor(Math.random() * 2500) + 500;
+
+    setTimeout(updateProgress, pause);
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>

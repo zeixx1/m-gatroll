@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Invasion</title>
+  <style>
+    body {
+      background: black;
+      overflow: hidden;
+    }
+    img {
+      position: absolute;
+      width: 50px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+<script>
+  function spawnBug() {
+    const bug = document.createElement('img');
+    bug.src = "u.png"; // Remplacez par le chemin de votre image de bug
+    bug.style.left = Math.random() * window.innerWidth + "px";
+    bug.style.top = Math.random() * window.innerHeight + "px";
+    document.body.appendChild(bug);
+  }
+  setInterval(spawnBug, 300);
+</script>
+</body>
+</html>

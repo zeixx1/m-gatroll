@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>!!! ALERTE VIRUS !!!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+  body {
+    background: radial-gradient(circle at center, #ff0000 60%, #660000 100%);
+    color: white;
+    font-family: 'Orbitron', monospace;
+    text-align: center;
+    padding: 50px;
+    animation: pulse 1s infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% { background-position: center; }
+    100% { background-position: center; filter: brightness(1.2); }
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #fff, 0 0 20px #ff0000;
+    animation: flicker 1.5s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    text-shadow: 0 0 10px #ff0000;
+  }
+
+  button {
+    margin-top: 40px;
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    color: #ff0000;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff0000;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    background: #ffcccc;
+    box-shadow: 0 0 25px #ff6666;
+    transform: scale(1.1);
+  }
+</style>
+</head>
+<body>
+
+<h1>!!! ALERTE VIRUS !!!</h1>
+<p>Ton ordinateur est infecté par un virus très dangereux.</p>
+<p>Appuie vite sur le bouton pour lancer la désinfection.</p>
+
+<button id="cleanBtn">Lancer la désinfection</button>
+
+<audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+<script>
+  const btn = document.getElementById('cleanBtn');
+  const alertSound = document.getElementById('alertSound');
+
+  alertSound.loop = true;
+  alertSound.play();
+
+  btn.addEventListener('click', () => {
+    alertSound.pause();
+    alert("Haha, t’es trollé ! Pas de virus ici 😎");
+  });
+</script>
+
+</body>
+</html>

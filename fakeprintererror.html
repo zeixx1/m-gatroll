@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Erreur Imprimante</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+      color: #111;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .error-box {
+      border: 2px solid #ff0000;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff5f5;
+      box-shadow: 0 0 15px red;
+    }
+
+    h1 {
+      color: red;
+      font-size: 2.2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    .code {
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #990000;
+    }
+
+    .blinking {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-box">
+    <h1>Erreur d'impression critique</h1>
+    <p>Erreur 0x00PRANK404 - Impossible de retrouver la cartouche d'encre virtuelle.</p>
+    <p class="code blinking">Code : 0xCAFEBABE</p>
+    <p>Veuillez souffler très fort sur l’imprimante<br>ou la jeter par la fenêtre pour continuer.</p>
+    <p><strong>Appuyez sur F13 pour ignorer cette erreur</strong></p>
+  </div>
+</body>
+</html>

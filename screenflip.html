@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Écran Inversé</title>
+  <style>
+    body {
+      transition: transform 1s;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 100px;
+      background: black;
+      color: lime;
+    }
+  </style>
+</head>
+<body>
+  <p>Bienvenue...</p>
+  <script>
+    setTimeout(() => {
+      document.body.style.transform = "rotate(180deg)";
+    }, 2000);
+  </script>
+</body>
+</html>

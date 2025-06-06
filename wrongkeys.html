@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clavier Possédé</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 1.5em;
+      padding: 40px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+<script>
+  const substitutions = {
+    a: 'q', b: 'v', c: 'x', d: 'l', e: 'r', f: 't', g: 'y',
+    h: 'u', i: 'o', j: 'k', k: 'j', l: 's', m: 'w', n: 'z',
+    o: 'e', p: 'a', q: 'd', r: 'f', s: 'm', t: 'c', u: 'b',
+    v: 'n', w: 'g', x: 'h', y: 'i', z: 'p',
+    A: 'Q', B: 'V', C: 'X', D: 'L', E: 'R', F: 'T', G: 'Y',
+    H: 'U', I: 'O', J: 'K', K: 'J', L: 'S', M: 'W', N: 'Z',
+    O: 'E', P: 'A', Q: 'D', R: 'F', S: 'M', T: 'C', U: 'B',
+    V: 'N', W: 'G', X: 'H', Y: 'I', Z: 'P',
+    '1': '9', '2': '8', '3': '7', '4': '6', '5': '0',
+    '6': '4', '7': '3', '8': '2', '9': '1', '0': '5',
+    ' ': ' ', '.': ',', ',': '.', '!': '?', '?': '!',
+    '\n': '\n'
+  };
+
+  document.addEventListener('keydown', function(e) {
+    e.preventDefault(); // Empêche l'entrée normale
+    const key = e.key;
+    const sub = substitutions[key] || '*';
+    document.body.innerText += sub;
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script>
+<p>Tape quelque chose... 😈</p>
+</body>
+</html>

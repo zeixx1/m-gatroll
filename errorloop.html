@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Erreur système critique</title>
+<style>
+  body {
+    background: black;
+    color: #ff4444;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    padding: 50px;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Erreur critique du système !</h1>
+<p>Un problème majeur a été détecté.</p>
+
+<script>
+function showError() {
+  alert("Erreur système critique ! Veuillez redémarrer.");
+  setTimeout(showError, 1000);
+}
+showError();
+</script>
+
+</body>
+</html>

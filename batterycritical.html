@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Batterie Critique</title>
+<style>
+  body {
+    background: #440000;
+    color: #ff8888;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 2rem;
+  }
+</style>
+</head>
+<body>
+<h1>Batterie Critique !</h1>
+<p>Arrêt automatique dans <span id="timer">10</span> secondes</p>
+
+<script>
+  let timer = 10;
+  const timerElem = document.getElementById('timer');
+
+  const countdown = setInterval(() => {
+    timer--;
+    timerElem.textContent = timer;
+    if (timer <= 0) {
+      clearInterval(countdown);
+      alert("Arrêt immédiat !");
+    }
+  }, 1000);
+</script>
+</body>
+</html>

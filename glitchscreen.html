@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Économiseur d’écran</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  body {
+    background: black;
+    color: #00ff00;
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    animation: glitch 2s infinite;
+  }
+  @keyframes glitch {
+    0% {
+      text-shadow:
+        2px 0 red,
+        -2px 0 cyan;
+    }
+    20% {
+      text-shadow:
+        -2px 0 red,
+        2px 0 cyan;
+    }
+    40% {
+      text-shadow:
+        2px 2px red,
+        -2px -2px cyan;
+    }
+    60% {
+      text-shadow:
+        -2px -2px red,
+        2px 2px cyan;
+    }
+    80% {
+      text-shadow:
+        2px 0 red,
+        -2px 0 cyan;
+    }
+    100% {
+      text-shadow:
+        -2px 0 red,
+        2px 0 cyan;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Économiseur d’écran activé</h1>
+
+</body>
+</html>

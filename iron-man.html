@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="perso-marvel.css">
+    <title>Iron Man</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Iron Man</h1>
+    </header>
+    <div class="info-box">
+        <h2>Infos sur Iron Man</h2>
+        <ul>
+            <li><strong>Nom :</strong> Tony Stark</li>
+            <li><strong>Statut :</strong> Super-héros</li>
+            <li><strong>Date de naissance :</strong> 29 mai 1970</li>
+            <li><strong>Occupation :</strong> PDG de Stark Industries</li>
+            <li><strong>Armure :</strong> Mark LXXXV</li>
+            <li><strong>Affiliation :</strong> Avengers</li>
+        </ul>
+    </div>
+    <div class="content">
+        <section class="history-box">
+            <h2>Histoire d'Iron Man</h2>
+            <p>
+                Tony Stark, un génie milliardaire, a été gravement blessé lors d'une attaque terroriste. 
+                Capturé, il a conçu une armure pour s'échapper et a ensuite perfectionné cette technologie 
+                pour devenir Iron Man. En tant que super-héros, il a joué un rôle clé dans la défense de la Terre 
+                et a cofondé les Avengers. Son sacrifice ultime a sauvé l'univers lors de la bataille contre Thanos.
+            </p>
+        </section>
+        <section class="facts-box">
+            <h2>Faits intéressants</h2>
+            <ul>
+                <li>Iron Man a été créé par Stan Lee, Larry Lieber, Don Heck et Jack Kirby en 1963.</li>
+                <li>Son intelligence artificielle, J.A.R.V.I.S., est devenue Vision dans l'univers cinématographique Marvel.</li>
+                <li>Il a conçu plus de 50 versions différentes de son armure.</li>
+                <li>Son réacteur ARC a été conçu pour maintenir des éclats de métal hors de son cœur.</li>
+            </ul>
+        </section>
+        <section class="quotes-box">
+            <h2>Citations célèbres</h2>
+            <ul>
+                <li>"Je suis Iron Man."</li>
+                <li>"Génie, milliardaire, playboy, philanthrope."</li>
+                <li>"Si nous ne pouvons pas protéger la Terre, soyez sûrs que nous la vengerons."</li>
+                <li>"Part of the journey is the end."</li>
+            </ul>
+        </section>
+        <section class="carousel">
+            <h2>Les Tenues d'Iron Man</h2>
+            <div class="carousel-images">
+                <img id="carousel-image" src="tenue1.jpg" alt="Tenue Mark I">
+            </div>
+            <div class="carousel-text">
+                <p id="carousel-text">La Mark I : La première armure construite par Tony Stark pour s'échapper de sa captivité.</p>
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage()">Précédent</button>
+                <button onclick="nextImage()">Suivant</button>
+            </div>
+        </section>
+    </div>
+    <script>
+        const images = [
+            { src: "mark 1.jpeg", text: "La Mark I : La première armure construite par Tony Stark pour s'échapper de sa captivité." },
+            { src: "tenue2.jpg", text: "La Mark III : Une version améliorée avec des capacités de vol et des armes avancées." },
+            { src: "tenue3.jpg", text: "La Hulkbuster : Conçue pour affronter Hulk en cas de besoin." },
+            { src: "tenue4.jpg", text: "La Mark LXXXV : L'armure ultime utilisée lors de la bataille contre Thanos." }
+        ];
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const imageElement = document.getElementById("carousel-image");
+            const textElement = document.getElementById("carousel-text");
+            imageElement.src = images[currentIndex].src;
+            textElement.textContent = images[currentIndex].text;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Appel entrant...</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    .call-box {
+      margin-top: 100px;
+    }
+    img {
+      width: 200px;
+      border-radius: 50%;
+      border: 4px solid green;
+    }
+    h1 {
+      color: red;
+    }
+    button {
+      font-size: 1.2em;
+      margin: 20px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="call-box">
+    <h1>Appel entrant...</h1>
+    <img src="o.jpg" alt="Visage inconnu" />
+    <p><strong>Inconnu</strong> essaie de vous joindre</p>
+    <button onclick="play()">Décrocher</button>
+    <audio id="scream" src="https://www.myinstants.com/media/sounds/horror-scream.mp3" preload="auto"></audio>
+  </div>
+  <script>
+    function play() {
+      document.getElementById('scream').play();
+      document.body.innerHTML = '<h1 style="color:red; margin-top: 150px;">TROP TARD 😱</h1>';
+    }
+  </script>
+</body>
+</html>
